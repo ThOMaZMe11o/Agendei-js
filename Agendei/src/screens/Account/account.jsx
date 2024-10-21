@@ -1,16 +1,19 @@
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import icon from "../../constants/icon.js";
-import { styles } from "./login.style.js";
-import Button from "../../components/button/button.jsx";
+import { styles } from "./account.style.js";
+import Button from "../../components/Button/button.jsx";
 
-function Login() {
+function Account() {
     return <View style={styles.container}>
 
         <View style={styles.containerLogo}>
-            <Image source={icon.logo} style={styles.logo} />
+            <Image source={icon.logo} style={styles.logo} />    
         </View>
 
         <View>
+            <View style={styles.containerInput}>
+                <TextInput placeholder="Nome" style={styles.input} />
+            </View>
             <View style={styles.containerInput}>
                 <TextInput placeholder="E-mail" style={styles.input} />
             </View>
@@ -19,14 +22,14 @@ function Login() {
                     style={styles.input}
                     secureTextEntry={true} />
             </View>
-            <Button text="Acessar" />
+            <Button text="Criar Conta" />
         </View>
 
         <View style={styles.footer}>
-            <Text>Não tenho conta. </Text>
+            <Text>Já tenho conta. </Text>
             <TouchableOpacity>
-                <Text style={styles.footerLink}
-                >Criar conta agora.
+                <Text style={styles.footerLink}>
+                    Fazer login.
                 </Text>
             </TouchableOpacity>
         </View>
@@ -34,4 +37,4 @@ function Login() {
     </View>
 }
 
-export default Login;
+export default Account;
